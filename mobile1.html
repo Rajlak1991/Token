@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Mobile Keypad</title>
+ <style>
+  .keypad {
+   width: 500px;
+   height: 500px;
+   margin: 50px auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .keypad button {
+   width: 75px;
+   height: 75px;
+   margin: 5px;
+   padding: 10px;
+   border: none;
+   border-radius: 10px;
+   background-color: #f0f0f0;
+   cursor: pointer;
+  }
+  
+  .keypad button:hover {
+   background-color: #e0e0e0;
+  }
+  
+  #mobile-number {
+   width: 50%;
+   height: 10px;
+   margin-bottom: 20px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   font-size: 24px;
+  }
+  
+  .country-code{
+    width: 10%;
+   height: 20px;
+
+  }
+ </style>
+</head>
+
+
+<body>
+ <div class="keypad">
+    <select id="country-code">
+        <option value="+971">+971 (UAE)</option>
+        <option value="+91">+91 (India)</option>
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+86">+86 (China)</option>
+      </select>
+    <input type="tel" id="mobile-number" placeholder="أدخل رقم الهاتف المحمول" maxlength="10">
+    <button onclick="okbtn"id="okbtn" width: 10% height: 5px> نعم </button>
+
+  <button onclick="addNumber('1')">1</button>
+  <button onclick="addNumber('2')">2</button>
+  <button onclick="addNumber('3')">3</button>
+  <button onclick="addNumber('4')">4</button>
+  <button onclick="addNumber('5')">5</button>
+  <button onclick="addNumber('6')">6</button>
+  <button onclick="addNumber('7')">7</button>
+  <button onclick="addNumber('8')">8</button>
+  <button onclick="addNumber('9')">9</button>
+  <button onclick="addNumber('0')">0</button>
+  <button onclick="clearNumber()">واضح</button>
+ </div>
+	
+ <script>
+  function addNumber(number) {
+   var mobileNumber = document.getElementById("mobile-number").value;
+   document.getElementById("mobile-number").value = mobileNumber + number;
+  }
+  
+  function clearNumber() {
+   document.getElementById("mobile-number").value = "";
+  }
+ </script>
+
+
+
+
+  
+  <script>
+    const countryCodeSelect = document.getElementById('country-code');
+    const phoneNumberInput = document.getElementById('phone-number');
+    const fullNumberDiv = document.getElementById('full-number');
+  
+    countryCodeSelect.addEventListener('change', updateFullNumber);
+    phoneNumberInput.addEventListener('input', updateFullNumber);
+  
+    function updateFullNumber() {
+      const countryCode = countryCodeSelect.value;
+      const phoneNumber = phoneNumberInput.value;
+      fullNumberDiv.textContent = `${countryCode} ${phoneNumber}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token machine</title>
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <style>
+  body {
+   background-color: #090909;
+  }
+  .container {
+   width: 420px;
+   margin: 50px auto;
+   background-color: #fff;
+   padding: 9%;
+   border: 1px solid #ddd;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .token-icon {
+   width: 50px;
+   height: 50px;
+   margin: 10px;
+   background-color: #007bff;
+   border-radius: 50%;
+   color: #fff;
+   font-size: 24px;
+   text-align: center;
+   line-height: 50px;
+  }
+  .button {
+   width: 200px;
+   height: 150px;
+   margin: 10px 0;
+   background-color: #007bff;
+   color: #fff;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+  }
+  .button:hover {
+   background-color: #0056b3;
+  }
+ </style>
+</head>
+
+
+<body>
+ <div class="container">
+
+  <button class="button" onclick="printToken()">Cash and cheqe services</button>
+  <button class="button" onclick="printToken()">New Product</button>
+  <button class="button" onclick="printToken()">Customer services</button>
+  <button class="button" onclick="printToken()">Exchange</button>
+  <button class="button" onclick="printToken()">Manager Cheqe</button>
+  <button class="button" onclick="printToken()">Meet Manager</button>
+    
+ </div>
+
+<script>
+function printToken() {
+    // Default printing functionality
+}
+
+function printToken() {
+    var printContent = "Token printed!";
+    var printWindow = window.open('', '', 'height=500,width=800');
+    printWindow.document.write('<html><head><title>Print Token</title>');
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(printContent);
+    printWindow.document.write('</body></html>');
+    printWindow.print();
+    printWindow.close();
+}
+</script>
+
+</body>
+</html>
